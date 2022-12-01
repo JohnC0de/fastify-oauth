@@ -1,0 +1,8 @@
+{
+  "name": "fastify-oauth",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "^0.2.2"
+  }
+}
