@@ -7,7 +7,8 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
-    "db:setup": "prisma migrate deploy"
+    "db:setup": "prisma migrate deploy",
+    "db:migrate": "prisma migrate dev"
   },
   "devDependencies": {
     "bun-types": "^0.2.2"
