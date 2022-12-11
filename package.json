@@ -7,7 +7,7 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
-    "db:setup": "prisma migrate deploy",
+    "db:setup": "prisma migrate reset --force",
     "db:migrate": "prisma migrate dev"
   },
   "devDependencies": {
@@ -27,5 +27,8 @@
     "prisma": "^4.7.1",
     "vitest": "^0.25.7",
     "zod": "^3.19.1"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }
