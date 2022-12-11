@@ -23,10 +23,3 @@ export function register(request: FastifyRequest, reply: FastifyReply) {
     handleError(reply, error)
   }
 }
-export function remove(request: FastifyRequest, reply: FastifyReply) {
-  try {
-    return { message: "User Deleted" }
-  } catch (error) {
-    handleError(reply, error)
-  }
-}

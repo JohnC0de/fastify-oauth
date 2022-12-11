@@ -1,30 +1,28 @@
 import { FastifyInstance } from "fastify"
 import { createCode, createProfile, createToken, refreshToken } from "../controllers/oauth.controller.js"
 
-async function userRouter(fastify: FastifyInstance) {
+export async function oauthRoutes(fastify: FastifyInstance) {
   fastify.route({
     method: "POST",
-    url: "/oauth/profile",
+    url: "/profile",
     handler: createProfile
   })
 
   fastify.route({
     method: "POST",
-    url: "/oauth/code",
+    url: "/code",
     handler: createCode
   })
 
   fastify.route({
     method: "POST",
-    url: "/oauth/token",
+    url: "/token",
     handler: createToken
   })
 
   fastify.route({
     method: "POST",
-    url: "/oauth/token/refresh",
+    url: "/token/refresh",
     handler: refreshToken
   })
 }
-
-export default userRouter

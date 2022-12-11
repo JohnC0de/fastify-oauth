@@ -1,7 +1,8 @@
 import { FastifyInstance } from "fastify"
 import { login, register } from "../controllers/user.controller.js"
+import { authInput } from "../schemas/user.schema.js"
 
-async function userRouter(fastify: FastifyInstance) {
+export async function userRoutes(fastify: FastifyInstance) {
   fastify.route({
     method: "POST",
     url: "/login",
@@ -14,5 +15,3 @@ async function userRouter(fastify: FastifyInstance) {
     handler: register
   })
 }
-
-export default userRouter
