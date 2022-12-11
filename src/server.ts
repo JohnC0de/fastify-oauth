@@ -1,11 +1,11 @@
-import { fastify, type FastifyInstance } from "fastify"
+import { fastify } from "fastify"
+import { oauthRoutes } from "./routes/oauth.routes.js"
+import { userRoutes } from "./routes/user.routes.js"
 import logger from "./utils/logger/pino.js"
-import { usersData } from "../test/mock/user.js"
 
-const server: FastifyInstance = fastify({ logger })
+const server = fastify({ logger })
 
-server.get("/users", async () => {
-  return usersData
-})
+server.register(oauthRoutes, { prefix: "/oauth" })
+server.register(userRoutes)
 
 export default server
