@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { authInput } from "./user.schema.js"
+import { loginInput } from "./user.schema.js"
 
 const profileInfo = z.object({
   apiKey: z.string().cuid(),
@@ -10,7 +10,7 @@ export const profileInput = profileInfo.extend({
   name: z.string().min(3).max(20)
 })
 
-export const codeInput = authInput.extend({
+export const codeInput = loginInput.extend({
   callbackUrl: z.string().url(),
   apiKey: z.string().cuid()
 })
